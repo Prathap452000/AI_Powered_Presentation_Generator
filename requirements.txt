@@ -1,0 +1,8 @@
+flask==3.0.2
+flask-socketio==5.3.6
+python-socketio==5.11.1
+python-engineio==4.9.1
+google-generativeai==0.3.2
+python-pptx==0.6.23
+python-dotenv==1.0.1
+eventlet==0.35.2
