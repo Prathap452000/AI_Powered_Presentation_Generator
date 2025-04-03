@@ -2,7 +2,6 @@
 
 A real-time presentation generator using Gemini 1.5 Flash for AI content creation and Python-pptx for PowerPoint generation.
 
-## 🚀 Quick Start
 
 ```bash
 # Clone repository
