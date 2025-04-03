@@ -1,6 +1,6 @@
 # AI-Powered Presentation Generator
 
-A real-time presentation generator using Gemini 1.5 Flash for AI content creation and Python-pptx for PowerPoint generation.
+A real-time presentation generator for PowerPoint generation.
 
 
 ```bash
