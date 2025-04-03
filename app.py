@@ -64,25 +64,31 @@ def handle_generate_presentation(data):
     try:
         emit('status_update', {'job_id': job_id, 'status': 'Generating content outline...'})
         
-        # First, generate an outline for the presentation
+        # Modified prompt to generate actual content instead of instructions
         outline_prompt = f"""
-        Create a detailed outline for a {num_slides}-slide presentation about "{topic}".
-        The presentation should be in a {style} style.
-        Include:
-        1. A title for the presentation
-        2. A title for each slide
-        3. 3-5 key bullet points for each slide
+        Create a detailed {num_slides}-slide presentation about "{topic}" in a {style} style.
+        
+        For each slide, provide:
+        1. A clear and engaging slide title
+        2. 3-5 bullet points of ACTUAL CONTENT (not meta-instructions)
+        
+        IMPORTANT: Each bullet point should contain real informative content that would appear on the slide, NOT meta-instructions about what kind of content to include.
+        
+        For example, instead of "Discuss the benefits of AI", provide the actual benefits like "Increases efficiency by automating repetitive tasks".
+        
         Format the response as a JSON structure with this exact format:
         {{
             "presentation_title": "Title Here",
             "slides": [
                 {{
                     "slide_title": "Slide 1 Title",
-                    "bullet_points": ["Point 1", "Point 2", "Point 3"]
+                    "bullet_points": ["Actual content point 1", "Actual content point 2", "Actual content point 3"]
                 }},
                 ...
             ]
         }}
+        
+        The first slide should be an introduction and the last slide should be a conclusion or summary.
         """
         
         outline_response = model.generate_content(outline_prompt)

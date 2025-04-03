@@ -120,6 +120,17 @@
             color: #7f8c8d;
             margin-top: 5px;
         }
+        .tip-box {
+            background-color: #edf7fd;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin-top: 30px;
+            border-radius: 5px;
+        }
+        .tip-box h3 {
+            margin-top: 0;
+            color: #3498db;
+        }
     </style>
 </head>
 <body>
@@ -129,6 +140,7 @@
         <div class="form-group">
             <label for="presentation-topic">Presentation Topic</label>
             <textarea id="presentation-topic" placeholder="Enter a detailed description of what you want in your presentation"></textarea>
+            <div class="help-text">Be specific about the topic and audience to get better results</div>
         </div>
         
         <div class="form-group">
@@ -154,6 +166,16 @@
         </div>
         
         <button id="generate-btn">Generate Presentation</button>
+        
+        <div class="tip-box">
+            <h3>Tips for Better Results</h3>
+            <p>To get more detailed content in your slides, try these tips:</p>
+            <ul>
+                <li>Be specific about your topic (e.g., "The impact of AI on healthcare in 2025" instead of just "AI")</li>
+                <li>Mention your target audience (e.g., "for undergraduate students" or "for a business meeting")</li>
+                <li>Include any specific sections you want covered in your description</li>
+            </ul>
+        </div>
         
         <div class="status-area" id="status-area">
             <div id="status-message">Preparing your presentation...</div>
